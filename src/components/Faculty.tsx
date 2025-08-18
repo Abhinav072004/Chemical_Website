@@ -4,12 +4,12 @@ import { Mail, ExternalLink, Award, BookOpen } from 'lucide-react';
 const Faculty = () => {
   const facultyMembers = [
     {
-      name: "Dr. Rajesh Kumar Sharma",
-      position: "Professor & Head",
+      name: "Dr. RAJAN SINGH",
+      position: "Assistant Professor",
       education: "Ph.D. from IIT Delhi",
       research: ["Process Systems Engineering", "Optimization", "Machine Learning"],
-      email: "rksharma@iiti.ac.in",
-      publications: 85,
+      email: " rsingh@iiti.ac.in",
+      Phone : "+91-731-2438 700 (Ext. 5186)",
       experience: "15+ years",
       image: "https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=400"
     },

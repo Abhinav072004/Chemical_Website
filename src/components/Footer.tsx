@@ -44,31 +44,31 @@ const Footer = () => {
           {/* Department Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">IIT</span>
+              <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-base">IIT</span>
               </div>
               <div>
-                <h3 className="text-lg font-bold">IIT Indore</h3>
-                <p className="text-sm text-gray-400">Chemical Engineering</p>
+                <h3 className="text-xl font-bold">IIT Indore</h3>
+                <p className="text-base text-gray-400">Chemical Engineering</p>
               </div>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+            <p className="text-gray-400 text-base leading-relaxed mb-4">
               Leading the future of chemical engineering through innovative education, 
               cutting-edge research, and industry collaboration.
             </p>
             
             {/* Contact Info */}
             <div className="space-y-2">
-              <div className="flex items-center text-gray-400 text-sm">
-                <Phone className="h-4 w-4 mr-2 flex-shrink-0" />
+              <div className="flex items-center text-gray-400 text-base">
+                <Phone className="h-5 w-5 mr-2 flex-shrink-0" />
                 <span>+91-732-2438-750</span>
               </div>
-              <div className="flex items-center text-gray-400 text-sm">
-                <Mail className="h-4 w-4 mr-2 flex-shrink-0" />
+              <div className="flex items-center text-gray-400 text-base">
+                <Mail className="h-5 w-5 mr-2 flex-shrink-0" />
                 <span>chemical@iiti.ac.in</span>
               </div>
-              <div className="flex items-start text-gray-400 text-sm">
-                <MapPin className="h-4 w-4 mr-2 flex-shrink-0 mt-1" />
+              <div className="flex items-start text-gray-400 text-base">
+                <MapPin className="h-5 w-5 mr-2 flex-shrink-0 mt-1" />
                 <span>Khandwa Road, Simrol, Indore - 453552, MP, India</span>
               </div>
             </div>
@@ -76,13 +76,13 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white text-sm transition-colors duration-200"
+                    className="text-gray-400 hover:text-white text-base transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -93,13 +93,13 @@ const Footer = () => {
 
           {/* Resources */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Resources</h4>
+            <h4 className="text-xl font-semibold mb-4">Resources</h4>
             <ul className="space-y-2">
               {resourceLinks.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white text-sm transition-colors duration-200"
+                    className="text-gray-400 hover:text-white text-base transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -110,13 +110,13 @@ const Footer = () => {
 
           {/* Research */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Research</h4>
+            <h4 className="text-xl font-semibold mb-4">Research</h4>
             <ul className="space-y-2">
               {researchLinks.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white text-sm transition-colors duration-200"
+                    className="text-gray-400 hover:text-white text-base transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -128,45 +128,47 @@ const Footer = () => {
 
         {/* Social Links & Newsletter */}
         <div className="border-t border-gray-800 pt-8 mb-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-col items-center space-y-6">
             {/* Social Links */}
-            <div className="flex items-center space-x-4">
-              <span className="text-gray-400 text-sm">Follow us:</span>
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  className="bg-gray-800 hover:bg-blue-600 p-2 rounded-full transition-colors duration-200"
-                  aria-label={social.label}
-                >
-                  <social.icon className="h-4 w-4" />
-                </a>
-              ))}
+            <div className="flex flex-col items-center space-y-3">
+              <span className="text-gray-300 text-base font-medium">Follow us:</span>
+              <div className="flex items-center space-x-4">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    className="bg-gray-800 hover:bg-blue-600 p-3 rounded-full transition-colors duration-200"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="h-5 w-5" />
+                  </a>
+                ))}
+              </div>
             </div>
 
             {/* Newsletter Signup */}
-            <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2">
-              <span className="text-gray-400 text-sm whitespace-nowrap">Stay updated:</span>
+            {/* <div className="flex flex-col items-center space-y-3">
+              <span className="text-gray-300 text-base font-medium">Stay updated:</span>
               <div className="flex">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="bg-gray-800 border border-gray-700 rounded-l-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="bg-gray-800 border border-gray-700 rounded-l-lg px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
-                <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-lg text-sm font-medium transition-colors duration-200">
+                <button className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-r-lg text-base font-medium transition-colors duration-200">
                   Subscribe
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <div className="text-gray-400 text-sm">
-            © 2025 Department of Chemical Engineering, IIT Indore. All rights reserved.Developed by Abhinav Singh.
+          <div className="text-gray-400 text-base">
+            © 2025 Department of Chemical Engineering, IIT Indore. All rights reserved. Developed by Abhinav Singh.
           </div>
-          <div className="flex items-center space-x-6 text-gray-400 text-sm">
+          <div className="flex items-center space-x-6 text-gray-400 text-base">
             <a href="#" className="hover:text-white transition-colors duration-200">
               Privacy Policy
             </a>

@@ -1,27 +1,34 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Programs from './components/Programs';
-import Faculty from './components/Faculty';
-import Research from './components/Research';
-import Events from './components/Events';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
+import {
+  Home,
+  AboutPage,
+  AcademicsPage,
+  FacultyPage,
+  ResearchPage,
+  EventsPage,
+  ContactPage
+} from './pages';
 
 function App() {
   return (
-    <div className="min-h-screen">
-      <Header />
-      <Hero />
-      <About />
-      <Programs />
-      <Faculty />
-      <Research />
-      <Events />
-      <Contact />
-      <Footer />
-    </div>
+    <Router>
+      <div className="min-h-screen">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/academics" element={<AcademicsPage />} />
+          <Route path="/faculty" element={<FacultyPage />} />
+          <Route path="/research" element={<ResearchPage />} />
+          <Route path="/events" element={<EventsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
