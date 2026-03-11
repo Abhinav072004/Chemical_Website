@@ -21,23 +21,24 @@ import AdminDashboard from './pages/AdminDashboard';
 import AdminFaculty from './pages/AdminFaculty';
 import AdminStudentPage from './pages/AdminStudent'; 
 import AdminEvents from './pages/AdminEvents';
-import AdminNews from './pages/AdminNews'; // <-- ADDED ADMIN NEWS IMPORT
+import AdminNews from './pages/AdminNews';
 import AdminLayout, { AdminRoute } from './pages/AdminLayout';
 
 // Inline Layout for the public website
+// --- THE MOBILE OVERFLOW FIX IS RIGHT HERE ---
 const PublicLayout = () => {
   return (
-    <>
+    <div className="w-full overflow-x-hidden flex flex-col min-h-screen">
       <Header />
-      <div className="min-h-screen pt-16">
+      <div className="flex-grow pt-16">
         <Outlet />
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 
-// Inline Layout for the Admin Panel (This restores the dark sidebar!)
+// Inline Layout for the Admin Panel
 const ProtectedAdminLayout = () => {
   return (
     <AdminRoute>
@@ -69,13 +70,13 @@ function App() {
         {/* Admin Login */}
         <Route path="/admin/login" element={<AdminLogin />} />
 
-        {/* Protected Admin Routes (Now wrapped in the Sidebar Layout) */}
+        {/* Protected Admin Routes */}
         <Route element={<ProtectedAdminLayout />}>
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/admin/faculty" element={<AdminFaculty />} />
           <Route path="/admin/student" element={<AdminStudentPage />} />
           <Route path="/admin/events" element={<AdminEvents />} />
-          <Route path="/admin/news" element={<AdminNews />} /> {/* <-- ADDED NEWS ROUTE */}
+          <Route path="/admin/news" element={<AdminNews />} />
         </Route>
 
         {/* Fallback redirect */}
