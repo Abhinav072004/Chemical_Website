@@ -1,47 +1,90 @@
 import React from 'react';
-import { MapPin } from 'lucide-react';
+import { Map, Mail, Phone, MapPin } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-16 lg:py-24 bg-gray-900 text-white">
+    <section id="contact" className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            Get In Touch
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Have questions about our programs, research, or admissions? 
-            We're here to help you every step of the way.
-          </p>
+        
+        {/* --- TOP SECTION: IIT Guwahati Clean Grid Style --- */}
+        <div className="mb-16 max-w-6xl mx-auto">
+          <h2 className="text-2xl font-normal text-[#0a2342]">Contact Address</h2>
+          {/* IIT Style Teal Underline */}
+          <div className="w-12 h-1 bg-teal-500 mt-2 mb-8"></div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            {/* Address Card */}
+            <div className="bg-[#f5f5f5] p-8 flex flex-col items-start transition-colors hover:bg-gray-200 min-h-[220px]">
+              <Map className="w-10 h-10 text-gray-700 mb-6" strokeWidth={1.5} />
+              <h3 className="text-lg font-normal text-gray-900 mb-3">Address</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Department of Chemical Engineering,<br />
+                POD-1D, 5th Floor,<br />
+                Indian Institute of Technology Indore,<br />
+                Khandwa Road, Simrol,<br />
+                Indore, Madhya Pradesh - 453552, India
+              </p>
+            </div>
+
+            {/* Email Card */}
+            <div className="bg-[#f5f5f5] p-8 flex flex-col items-start transition-colors hover:bg-gray-200 min-h-[220px]">
+              <Mail className="w-10 h-10 text-gray-700 mb-6" strokeWidth={1.5} />
+              <h3 className="text-lg font-normal text-gray-900 mb-3">Email</h3>
+              <a href="mailto:chemenggoffice@iiti.ac.in" className="text-blue-500 text-sm hover:underline">
+                chemenggoffice@iiti.ac.in
+              </a>
+            </div>
+
+            {/* Phone Card */}
+            <div className="bg-[#f5f5f5] p-8 flex flex-col items-start transition-colors hover:bg-gray-200 min-h-[220px]">
+              <Phone className="w-10 h-10 text-gray-700 mb-6" strokeWidth={1.5} />
+              <h3 className="text-lg font-normal text-gray-900 mb-3">Contact No</h3>
+              <p className="text-gray-600 text-sm">
+                +91 731 660333 5594
+              </p>
+            </div>
+
+          </div>
         </div>
 
-        {/* Map Section */}
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gray-800 rounded-xl p-8">
-            <h3 className="text-2xl font-bold mb-6 text-center">Find Us on Campus</h3>
-            <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-              <div className="w-full h-96 bg-gray-700 rounded-lg flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                  <p className="text-gray-400">Interactive campus map would be embedded here</p>
-                  <p className="text-sm text-gray-500 mt-2">
-                    Department of Chemical Engineering, IIT Indore
-                  </p>
-                </div>
-              </div>
+        {/* --- BOTTOM SECTION: Your Beautiful Dark Map Container --- */}
+        <div className="max-w-5xl mx-auto">
+          <div className="bg-gray-900 rounded-xl p-6 md:p-8 shadow-2xl">
+            <h3 className="text-2xl font-bold mb-6 text-center text-white">Find Us on Campus</h3>
+            
+            {/* The actual map embedded inside the dark container */}
+            <div className="w-full h-[400px] md:h-[450px] bg-gray-800 rounded-lg overflow-hidden border border-gray-700">
+              <iframe
+                title="IIT Indore Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.7588075765664!2d75.91853451535798!3d22.51934334081829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962efcccbce7145%3A0x784e8cb69818596b!2sIndian%20Institute%20Of%20Technology%E2%80%93Indore%20(IIT%E2%80%93Indore)!5e0!3m2!1sen!2sin!4v1678123456789!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
-            <div className="mt-6 text-center">
-              <p className="text-gray-300 mb-4">
-                Located in the heart of IIT Indore campus, our department is easily accessible 
+
+            <div className="mt-8 text-center">
+              <p className="text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed">
+                Located in the heart of the IIT Indore campus, our department is easily accessible 
                 from all major campus facilities.
               </p>
-              <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200">
+              <a 
+                href="https://goo.gl/maps/bH3gQwHqKxU7D4B66" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200"
+              >
+                <MapPin className="w-5 h-5 mr-2" />
                 Get Directions
-              </button>
+              </a>
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );

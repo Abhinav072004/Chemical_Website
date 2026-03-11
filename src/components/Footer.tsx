@@ -1,11 +1,12 @@
 import React from 'react';
-import { Facebook, Twitter, Linkedin, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Youtube, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
     { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Linkedin, href: "https://www.linkedin.com/feed/?trk=guest_homepage-basic_google-one-tap-submit", label: "LinkedIn" },
+    { icon: Instagram, href: "https://www.instagram.com/iitindorechemeng", label: "Instagram" },
     { icon: Youtube, href: "#", label: "YouTube" }
   ];
 
@@ -44,8 +45,12 @@ const Footer = () => {
           {/* Department Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-base">IIT</span>
+              <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center">
+                <img
+                  src="/src/assets/chemical-logo.jpg"
+                  alt="Chemical Engineering Logo"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <h3 className="text-xl font-bold">IIT Indore</h3>
@@ -57,19 +62,21 @@ const Footer = () => {
               cutting-edge research, and industry collaboration.
             </p>
             
-            {/* Contact Info */}
+            {/* Contact Info (UPDATED WITH REAL DATA) */}
             <div className="space-y-2">
               <div className="flex items-center text-gray-400 text-base">
                 <Phone className="h-5 w-5 mr-2 flex-shrink-0" />
-                <span>+91-732-2438-750</span>
+                <span>+91 731 660333 5594</span>
               </div>
               <div className="flex items-center text-gray-400 text-base">
                 <Mail className="h-5 w-5 mr-2 flex-shrink-0" />
-                <span>chemical@iiti.ac.in</span>
+                <a href="mailto:chemenggoffice@iiti.ac.in" className="hover:text-white transition-colors duration-200">
+                  chemenggoffice@iiti.ac.in
+                </a>
               </div>
               <div className="flex items-start text-gray-400 text-base">
                 <MapPin className="h-5 w-5 mr-2 flex-shrink-0 mt-1" />
-                <span>Khandwa Road, Simrol, Indore - 453552, MP, India</span>
+                <span>POD-1D, 5th Floor, Khandwa Road, Simrol, Indore - 453552, MP, India</span>
               </div>
             </div>
           </div>
@@ -137,6 +144,8 @@ const Footer = () => {
                   <a
                     key={index}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="bg-gray-800 hover:bg-blue-600 p-3 rounded-full transition-colors duration-200"
                     aria-label={social.label}
                   >
@@ -145,28 +154,13 @@ const Footer = () => {
                 ))}
               </div>
             </div>
-
-            {/* Newsletter Signup */}
-            {/* <div className="flex flex-col items-center space-y-3">
-              <span className="text-gray-300 text-base font-medium">Stay updated:</span>
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="bg-gray-800 border border-gray-700 rounded-l-lg px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-                <button className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-r-lg text-base font-medium transition-colors duration-200">
-                  Subscribe
-                </button>
-              </div>
-            </div> */}
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-gray-400 text-base">
-            © 2025 Department of Chemical Engineering, IIT Indore. All rights reserved. Developed by Abhinav Singh.
+            © 2026 Department of Chemical Engineering, IIT Indore. All rights reserved. Developed by Abhinav Singh.
           </div>
           <div className="flex items-center space-x-6 text-gray-400 text-base">
             <a href="#" className="hover:text-white transition-colors duration-200">

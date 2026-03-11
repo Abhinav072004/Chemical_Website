@@ -56,21 +56,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-orange-500">
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">Vision</h4>
-              <p className="text-gray-600">
-                To be a globally recognized center of excellence in chemical engineering education 
-                and research, contributing to sustainable development and societal welfare.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-800">
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">Mission</h4>
-              <p className="text-gray-600">
-                To provide high-quality education, conduct cutting-edge research, and foster innovation 
-                in chemical engineering while developing responsible engineers and leaders.
-              </p>
-            </div>
+            {/* Vision & Mission removed as requested */}
           </div>
 
           {/* Image */}

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import logoImg from '../assets/chemical-logo.jpg';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,12 +25,23 @@ const Header = () => {
       name: 'Academics', 
       href: '/academics',
       dropdown: [
-        { name: 'Undergraduate', href: '/academics#ug' },
-        { name: 'Postgraduate', href: '/academics#pg' },
-        { name: 'PhD Programs', href: '/academics#phd' }
+        { name: 'Undergraduate', href: '/students/ug' },
+        { name: 'Postgraduate', href: '/students/pg' },
+        { name: 'PhD Programs', href: '/students/phd' }
       ]
     },
-    { name: 'Faculty', href: '/faculty' },
+    { 
+      name: 'Faculty', 
+      href: '/faculty',
+      dropdown: [
+        { name: 'Core Faculty', href: '/faculty/core' },
+        { name: 'Visiting/Distinguished Faculty', href: '/faculty/visiting' },
+        { name: 'Associate Faculty', href: '/faculty/associate' },
+        { name: 'Advisory Committee', href: '/faculty/advisory' },
+        { name: 'Working Committee', href: '/faculty/working' },
+        { name: 'Convenor', href: '/faculty/convenor' }
+      ]
+    },
     { name: 'Research', href: '/research' },
     { name: 'Events', href: '/events' },
     { name: 'Contact', href: '/contact' }
@@ -43,7 +55,7 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden flex items-center justify-center bg-blue-800">
               <img 
-                src="/src/assets/chemical-logo.jpg" 
+                src={logoImg}
                 alt="Chemical Engineering Logo" 
                 className="w-full h-full object-cover"
                 onError={(e) => {
@@ -70,13 +82,13 @@ const Header = () => {
             {navItems.map((item) => (
               <div
                 key={item.name}
-                className="relative"
+                className="relative flex items-center h-full"
                 onMouseEnter={() => item.dropdown && setActiveDropdown(item.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <Link
                   to={item.href}
-                  className={`flex items-center font-medium transition-colors duration-200 ${
+                  className={`flex items-center font-medium transition-colors duration-200 py-2 ${
                     location.pathname === item.href ? 'text-blue-800' : 'text-gray-700 hover:text-blue-800'
                   }`}
                 >
@@ -84,19 +96,21 @@ const Header = () => {
                   {item.dropdown && <ChevronDown className="ml-1 h-4 w-4" />}
                 </Link>
                 
-                {/* Dropdown Menu */}
+                {/* Dropdown Menu - FIXED GAP ISSUE */}
                 {item.dropdown && activeDropdown === item.name && (
-                  <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200">
-                    <div className="py-2">
-                      {item.dropdown.map((dropdownItem) => (
-                        <Link
-                          key={dropdownItem.name}
-                          to={dropdownItem.href}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition-colors duration-200"
-                        >
-                          {dropdownItem.name}
-                        </Link>
-                      ))}
+                  <div className="absolute top-full left-0 pt-2 w-56 z-50">
+                    <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
+                      <div className="py-2">
+                        {item.dropdown.map((dropdownItem) => (
+                          <Link
+                            key={dropdownItem.name}
+                            to={dropdownItem.href}
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition-colors duration-200"
+                          >
+                            {dropdownItem.name}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 )}

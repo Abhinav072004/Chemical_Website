@@ -17,19 +17,6 @@ const Programs = () => {
       color: "bg-blue-500"
     },
     {
-      icon: GraduationCap,
-      title: "M.Tech Chemical Engineering",
-      duration: "2 Years",
-      description: "Advanced postgraduate program with specialization options and research-oriented curriculum.",
-      highlights: [
-        "Specialized electives",
-        "Research methodology",
-        "Thesis work",
-        "Industry collaboration"
-      ],
-      color: "bg-green-500"
-    },
-    {
       icon: FlaskConical,
       title: "Ph.D. Program",
       duration: "3-5 Years",
@@ -70,11 +57,11 @@ const Programs = () => {
         </div>
 
         {/* Programs Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 lg:gap-12 mb-16">
           {programs.map((program, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full"
             >
               <div className="flex items-center mb-6">
                 <div className={`${program.color} p-3 rounded-lg mr-4`}>
@@ -99,7 +86,7 @@ const Programs = () => {
                 ))}
               </div>
 
-              <button className="w-full bg-gray-900 hover:bg-gray-800 text-white py-3 px-6 rounded-lg font-medium transition-colors duration-200">
+              <button className="w-full mt-auto bg-gray-900 hover:bg-gray-800 text-white py-3 px-6 rounded-lg font-medium transition-colors duration-200">
                 Learn More
               </button>
             </div>

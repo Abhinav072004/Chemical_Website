@@ -8,6 +8,9 @@ lerna-debug.log*
 
 
 
+# Server DB
+server/data.db
+
 # Environment variables
 .env
 .env.local
